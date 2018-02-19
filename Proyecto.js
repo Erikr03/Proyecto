@@ -29,12 +29,8 @@ if (edad >= 65 || edad <= 18) {
   var comision4 = comision1+comision2+comision3;
   var recargo = ((comision4/100) * presiobase);
   var totalapagar = recargo + presiobase;
-  document.write("Su solicitud fue procesada con exito");
-  document.writeln("Su nombre: "+nombre);
-  document.writeln( "Su edad es: " + edad);
-  document.writeln("Tubo los siguientes recargos:");
-  document.writeln("Regargo por edad:"+ comision1);
-  document.writeln("Recargo por Conyuge: "+ comision2);
-  document.writeln("Recargo por hijos: "+ cant_hijos);
-  document.writeln("SU TOTAL A PAGAR ES DE: "+ totalapagar);
+  document.write("Su solicitud fue procesada con exito <br/>"+"Su nombre: "+nombre+"<br/>"+"Su edad es: "+edad+
+"<br/>"+"Tubo los siguientes regargos:<br/>"+"Regargo por edad: "+comision1+"%<br/>"+"Recargo por edad de conyuge: "+
+comision2+"%<br/>"+"Recargo por hijos: "+cant_hijos+"%<br/>"+"SU TOTAL A PAGAR ES: "+totalapagar);
+
   }
