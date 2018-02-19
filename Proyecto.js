@@ -9,28 +9,31 @@ if (edad >= 65 || edad <= 18) {
 
    if (estado_civil == "si") {
     var edad_pareja = prompt("Indique la edad de su Conyuge");
+    if ( edad_pareja < 30) { var comision2 = 1;}
+    else if (edad_pareja >= 30 || edad_pareja < 40) { comision2 =  2;}
+    else if (edad_pareja >= 40 || edad_pareja < 50) { comision2 =  3;}
+    else if (edad_pareja >= 50 || edad_pareja < 70) { comision2 =  5;}
+  }else {
+
+    comision2=0;
   }
     var hijos = prompt("¿Tiene Hijos? Responda Si o No");
 
   if (hijos == "si") {
     var cant_hijos = prompt("¿Cuantos hijos tiene menores de 21 años?");
     var comision3 = parseInt(cant_hijos,"10");
-  }
+  }if (hijos == "no") {var comision3 = 0;}
   if (edad < 21 ) { var comision1= 0;    }
   else if (edad == 21 || edad < 25) { comision1 = 1;}
   else if (edad == 25 || edad < 30) { comision1 = 2;}
   else if (edad == 30 || edad < 40) { comision1 = 5;}
   else if (edad == 40 || edad < 50) { comision1 = 8;}
   else if (edad == 50 || edad < 65) { comision1 = 12;}
-  if (edad_pareja < 30) { var comision2 = 1;}
-  else if (edad_pareja >= 30 || edad_pareja < 40) { comision2 =  2;}
-  else if (edad_pareja >= 40 || edad_pareja < 50) { comision2 =  3;}
-  else if (edad_pareja >= 50 || edad_pareja < 70) { comision2 =  5;}
   var comision4 = comision1+comision2+comision3;
   var recargo = ((comision4/100) * presiobase);
   var totalapagar = recargo + presiobase;
   document.write("Su solicitud fue procesada con exito <br/>"+"Su nombre: "+nombre+"<br/>"+"Su edad es: "+edad+
-"<br/>"+"Tubo los siguientes regargos:<br/>"+"Regargo por edad: "+comision1+"%<br/>"+"Recargo por edad de conyuge: "+
-comision2+"%<br/>"+"Recargo por hijos: "+cant_hijos+"%<br/>"+"SU TOTAL A PAGAR ES: "+totalapagar);
+"<br/>"+"Tubo los siguientes recargos:<br/>"+"Recargo por edad: "+comision1+"%<br/>"+"Recargo por edad de conyuge: "+
+comision2+"%<br/>"+"Recargo por hijos: "+comision3+"%<br/>"+"SU TOTAL A PAGAR ES: "+totalapagar);
 
   }
